@@ -30,3 +30,11 @@
 
 <!-- 4. ActionSheet：从屏幕底部弹窗（列表选项）-->
 <button size="mini" bindtap="handleShowAction">Action弹窗</button>
+
+<!-- navigator页面跳转，默认，路径后面加问号后面跟键值对，可以把参数和值传到下一个页面，再navi.js里的onLoad声明周期里获取 -->
+<navigator url='/pages/navi/navi?name=Michael&age=30'>跳转到navi页面</navigator>
+<!-- navigator页面跳转，至tabbar，注意：只要跳转的页面在tabbar里，就一定要用switchTab -->
+<navigator url="/pages/image/image" open-type="switchTab">跳转到图片</navigator>
+
+<!-- 通过代码进行页面跳转 -->
+<button size="mini" bindtap="handleNavi">跳转到navi页面</button>

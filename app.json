@@ -4,7 +4,8 @@
     "pages/profile/profile",
     "pages/text/text",
     "pages/button/button",
-    "pages/image/image"
+    "pages/image/image",
+    "pages/navi/navi"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",
