@@ -1,0 +1,25 @@
+<!--pages/text/text.wxml-->
+<text>text组件</text>
+<text>，不会换行，相当于span标签\n</text>
+<text>若要换行，加斜杠n\n</text>
+
+<text selectable="true">此行文本可被长摁选中，要在手机上预览，选中后可进行复制等工作\n</text>
+
+<!-- space决定文本空格大小：nbsp为默认空格大小，ensp为半个中文字符大小，emsp为一个中文字符 -->
+<text>Hello World\n</text>
+<text space="nbsp">Hello World\n</text>
+<text space="ensp">Hello World\n</text>
+<text space="emsp">Hello World\n</text>
+
+<!-- 是否解码文本，输出5>3，只写一个decode等同于decode='true' -->
+<text decode>5 &gt; 3</text>
+
+<view>============================</view>
+<!-- 常见的一些事件处理 -->
+<!-- bindtap和bindlongpress同时只会出现一种情况 -->
+<view class="box" 
+  bindtouchstart="handleTouchStart"
+  bindtouchmove="handleTouchMove"
+  bindtouchend="handleTouchEnd"
+  bindtap="handleTap"
+  bindlongpress="handleLongPress"></view>

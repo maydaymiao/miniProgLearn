@@ -1,0 +1,68 @@
+<!--pages/home/home.wxml-->
+<view style="color: red; font-size: 24px">Hello {{name}}</view>
+<view>I am {{age}}，我是{{age>18 ? '成年人':'未成年人'}}</view>
+
+<!-- index和item是关键词 -->
+<!-- block标签并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性（如for，if） -->
+<text wx:for="{{3}}">Hello \n</text>
+<view></view>
+<text wx:for="{{students}}">{{index}}-{{item.name}}-{{item.age}} </text>
+<view></view>
+<!-- 给item和index起别名，在遍历多维数组的时候，适合给item起别名，否则外层和内层都叫item了 -->
+<text wx:for="{{students}}" wx:for-item='student' wx:for-index='i'>{{i}}-{{student.name}}-{{student.age}} </text>
+
+<view>当前计数：{{counter}}</view>
+<!-- 注意bindtap里面不需要加{{}}，只有绑定数据的时候需要 -->
+<button size="mini" bindtap="handleBtnClick">+</button>
+
+<!-- input组件：默认是透明无边框的，所以在wxss里加个样式 -->
+<input></input>
+
+<!-- value: input中初始值 -->
+<input value="初始值"></input>
+<!-- type属性：决定弹出键盘类型，如果是number则只弹出数字键盘，更多选项看文档 -->
+<input type="number" bindinput="handleInputScore"></input>
+<view wx:if="{{score > 90}}">优秀</view>
+<view wx:elif="{{score > 80}}">良好</view>
+<view wx:elif="{{score > 60}}">及格</view>
+<view wx:else>不及格</view>
+<!-- password：暗文输入 -->
+<input password placeholder="请输入密码"></input>
+
+<!-- input绑定事件 -->
+<input bindinput="handleInput" 
+       bindfocus="handleFocus"
+       bindblur="handleBlur"></input>
+
+ <!-- wxss中的单位：rpx - 可以根据屏幕宽度进行自适应 -->
+<view class="box1"></view>
+<view class="box2"></view>
+
+<button size="mini"  bindtap="handleSwitchColor">切换颜色</button>
+<view class="box {{isActive ? 'active' : ''}}">哈哈哈哈哈</view>
+
+<!-- Example：从标准样式库中引入一个搜索框 -->
+<view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+</view>
+
+<!-- 导入模板，is属性跟的是模板的名称，data为传参 -->
+<import src="/wxml/template.wxml"></import>
+<template is="contentItem" data="{{btnText: '按钮', content: 'a'}}"></template>
+<template is="contentItem" data="{{btnText: '警告', content: 'b'}}"></template>
+<template is="contentItem" data="{{btnText: '登陆', content: 'c'}}"></template>

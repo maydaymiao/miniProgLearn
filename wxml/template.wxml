@@ -1,0 +1,6 @@
+<!-- 在单独文件中定义模版，并且在其他页面中引入模版 -->
+<!-- template的name属性，用于其他页面调用 -->
+<template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template>

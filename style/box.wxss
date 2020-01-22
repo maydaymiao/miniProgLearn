@@ -1,0 +1,12 @@
+.box1{
+  width: 100px;
+  height: 100px;
+  background: red
+}
+
+/* 在iphone6下，1rpx = 0.5px，现在切换设备，box2会根据选择设备的不同自适应尺寸 */
+.box2{
+  width: 200rpx;
+  height: 200rpx;
+  background: blue
+}

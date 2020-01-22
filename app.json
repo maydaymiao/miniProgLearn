@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/profile/profile",
+    "pages/text/text",
+    "pages/button/button",
+    "pages/image/image"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ff5777",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "我的第一个小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "selectedColor": "#ff5777",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home_active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/tabbar/me.png",
+        "selectedIconPath": "assets/tabbar/me_active.png"
+      },
+      {
+        "pagePath": "pages/text/text",
+        "text": "文本标签",
+        "iconPath": "assets/tabbar/text.png",
+        "selectedIconPath": "assets/tabbar/text_active.png"
+      },
+      {
+        "pagePath": "pages/button/button",
+        "text": "按钮",
+        "iconPath": "assets/tabbar/button.png",
+        "selectedIconPath": "assets/tabbar/button_active.png"
+      },
+      {
+        "pagePath": "pages/image/image",
+        "text": "图片",
+        "iconPath": "assets/tabbar/image.png",
+        "selectedIconPath": "assets/tabbar/image_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap29.json"
+}

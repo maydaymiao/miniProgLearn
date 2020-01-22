@@ -1,0 +1,21 @@
+<!--pages/image/image.wxml-->
+<!-- image是行内块级元素(inline-block) -->
+
+<!-- 第一行为相对路径，第二行为绝对路径（小程序里根目录用/表示） -->
+<image src="../../assets/images/onepiece.jpg"></image>
+<image src="/assets/images/onepiece.jpg"></image>
+
+<!-- show-menu-by-longpress属性：长摁图片可以调取菜单（如发送给朋友，收藏，识别小程序码等） -->
+<image show-menu-by-longpress mode="aspectFit" src="/assets/images/everyday.jpeg"></image>
+
+<!-- 相册中的图片 -->
+<button bindtap="handleChooseAlbum">选择图片</button>
+<image wx:for="{{imagePath}}" src="{{item}}"></image>
+
+<!-- bindload属性：当图片加载完毕后触发 -->
+<!-- lazy-load属性：懒加载-在即将进入一定范围（上下三屏）时图片才开始加载 -->
+<image wx:for="{{10}}"
+  bindload="handleBindLoad"
+  lazy-load
+  mode="aspectFit"
+  src="https://mat1.gtimg.com/pingjs/ext2020/qqindex2018/dist/img/qq_logo_2x.png"></image>

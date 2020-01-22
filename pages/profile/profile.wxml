@@ -1,0 +1,7 @@
+<!--pages/profile/profile.wxml-->
+<!-- 展示用户信息 -->
+<!-- 文档：https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html -->
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+
+<button open-type="getUserInfo">登录</button>
