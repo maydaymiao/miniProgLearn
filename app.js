@@ -11,9 +11,8 @@ App({
    */
   onLaunch: function () {
     // 1.先从缓冲中取出token
-    const token = wx.getStorage({
-      key: TOKEN,
-    });
+    const token = wx.getStorageSync(TOKEN);
+    console.log(token);
 
     // 2.判断token是否有值
     if(token && token.length !== 0){
@@ -61,16 +60,14 @@ App({
   },
 
   check_token(token){
-    // 执行了验证操作
+    console.log("执行了验证操作")
     request({
       url: "http://123.207.32.32:3000/auth",
       method: 'post',
       header:{
         token
-      },
-      success: res=>console.log(res),
-      fail: err=>console.log(err)
-    })
+      }
+    }).then(res=>console.log(res)).catch(err=>console.log(err))
   },
 
   /**
